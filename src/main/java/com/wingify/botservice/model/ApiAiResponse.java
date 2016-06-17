@@ -21,7 +21,7 @@ public class ApiAiResponse {
             final A5Data data = mapper.readValue(bytes, A5Data.class);
             StringBuilder stringBuilder = new StringBuilder();
             for (Slots slot : data.items) {
-                stringBuilder.append("Slot ")
+                stringBuilder
                         .append(slot.slot)
                         .append("\n--------------\n");
                 for (Event event : slot.data) {
