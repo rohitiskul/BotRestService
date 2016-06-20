@@ -23,7 +23,7 @@ public class RestServiceController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/webhook", consumes = "application/json")
     public ApiAiResponse webhook(@RequestBody String json) {
-        System.out.println("json\n" + json);
+        System.out.println("json=" + json);
         return new ApiAiResponse();
     }
 }
