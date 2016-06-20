@@ -26,7 +26,7 @@ public class RestServiceController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/webhook")
     public ApiAiResponse webhook(String json) {
+        System.out.println("json\n" + json);
         return new ApiAiResponse();
     }
-
 }
