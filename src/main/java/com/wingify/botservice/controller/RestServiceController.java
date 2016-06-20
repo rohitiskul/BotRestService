@@ -2,10 +2,7 @@ package com.wingify.botservice.controller;
 
 import com.wingify.botservice.model.ApiAiResponse;
 import com.wingify.botservice.model.Greeting;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,8 +21,8 @@ public class RestServiceController {
         return greeting;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/webhook")
-    public ApiAiResponse webhook(String json) {
+    @RequestMapping(method = RequestMethod.POST, value = "/webhook", consumes = "text/plain")
+    public ApiAiResponse webhook(@RequestBody String json) {
         System.out.println("json\n" + json);
         return new ApiAiResponse();
     }
