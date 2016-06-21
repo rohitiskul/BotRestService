@@ -1,4 +1,4 @@
-package com.wingify.botservice.model;
+package com.test.botservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

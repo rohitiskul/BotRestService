@@ -1,4 +1,4 @@
-package com.wingify.botservice.model;
+package com.test.botservice.model;
 
 /**
  * Created by Rohit on 6/20/2016.

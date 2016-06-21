@@ -1,4 +1,4 @@
-package com.wingify.botservice;
+package com.test.botservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.SpringApplication;

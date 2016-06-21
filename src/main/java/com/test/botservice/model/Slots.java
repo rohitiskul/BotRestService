@@ -1,4 +1,4 @@
-package com.wingify.botservice.model;
+package com.test.botservice.model;
 
 import java.util.ArrayList;
 

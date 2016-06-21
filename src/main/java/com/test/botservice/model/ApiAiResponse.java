@@ -1,7 +1,7 @@
-package com.wingify.botservice.model;
+package com.test.botservice.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wingify.botservice.Main;
+import com.test.botservice.Main;
 
 import java.io.IOException;
 

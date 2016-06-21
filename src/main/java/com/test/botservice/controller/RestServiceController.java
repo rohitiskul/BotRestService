@@ -1,10 +1,10 @@
-package com.wingify.botservice.controller;
+package com.test.botservice.controller;
 
-import com.wingify.botservice.Main;
-import com.wingify.botservice.model.Action;
-import com.wingify.botservice.model.ApiAiRequest;
-import com.wingify.botservice.model.ApiAiResponse;
-import com.wingify.botservice.model.Greeting;
+import com.test.botservice.Main;
+import com.test.botservice.model.Action;
+import com.test.botservice.model.ApiAiRequest;
+import com.test.botservice.model.ApiAiResponse;
+import com.test.botservice.model.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import javax.net.ssl.HttpsURLConnection;
