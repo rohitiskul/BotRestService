@@ -1,5 +1,6 @@
 package com.wingify.botservice;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -176,9 +177,11 @@ public class Main {
             "    }\n" +
             "  ]\n" +
             "}";
+    public static ObjectMapper mapper;
 
     public static void main(String[] args) {
         System.out.println("Running bot rest service");
+        mapper = new ObjectMapper();
         SpringApplication.run(Main.class, args);
     }
 }

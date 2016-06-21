@@ -14,6 +14,18 @@ public class ApiAiResponse {
     public String displayText;
     public String source;
 
+    public ApiAiResponse(String source, String displayText) {
+        this.source = source;
+        this.speech = displayText;
+        this.displayText = displayText;
+    }
+
+    public ApiAiResponse(String source, String speech, String displayText) {
+        this.source = source;
+        this.speech = speech;
+        this.displayText = displayText;
+    }
+
     public ApiAiResponse() {
         final ObjectMapper mapper = new ObjectMapper();
         byte[] bytes = Main.json.getBytes();
