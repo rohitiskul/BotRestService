@@ -20,7 +20,7 @@ import java.net.URL;
 @RestController
 public class RestServiceController {
 
-    private static final String SOURCE = "a5-events-after-5-source";
+    private static final String SOURCE = "anything-as-source";
     private static final String GENERIC_ERROR = "Something is not right, can you try again?";
 
     @RequestMapping(method = RequestMethod.GET, value = "/greeting")
@@ -55,21 +55,15 @@ public class RestServiceController {
 
     private ApiAiResponse searchEvents(ApiAiRequest.Params params) throws IOException {
         System.out.println("params=" + params.toString());
-        String urlStr = "https://old.after5app.com/v1.0";
-        urlStr = urlStr + "/discover?city=Pune" +
-                "&country=India" +
-                "&cLat=18.5204" +
-                "&cLong=73.8567" +
-                "&uLat=18.5431007" +
-                "&uLong=73.9044848";
+        String urlStr = "https://****.url.****/v1.0";
+        urlStr = urlStr + "/path?params=param";
         URL url = new URL(urlStr);
         HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
         con.setRequestProperty("uuid", "asdasd");
         con.setRequestProperty("Content-Type", "application/json");
         con.setRequestProperty("client", "android");
         con.setRequestProperty("timezone", "GMT+05:30");
-        con.setRequestProperty("access_token",
-                "FdEZiAptgW8dFnEn9CJK2zMHa2ZhLhfXSuyMISwMsXSq6oaPhADbYzYMK+1fRN9XqTjTKico6h1YOvMIRExZiA892805nxB+653Pxy6xxBs=");
+        con.setRequestProperty("access_token", "*********");
 
         int responseCode = con.getResponseCode();
         if (responseCode != 200) {
@@ -86,37 +80,5 @@ public class RestServiceController {
         in.close();
         System.out.println(response.toString());
         return new ApiAiResponse();
-//
-//        final RestTemplate template = new RestTemplate();
-//        final HashMap<String, String> headerMap = new HashMap<>();
-//        headerMap.put("uuid", "asdasd");
-//        headerMap.put("Content-Type", "application/json");
-//        headerMap.put("client", "android");
-//        headerMap.put("timezone", "GMT+05:30");
-//        headerMap.put("access_token", "FdEZiAptgW8dFnEn9CJK2zMHa2ZhLhfXSuyMISwMsXSq6oaPhADbYzYMK+1fRN9XqTjTKico6h1YOvMIRExZiH069JRyqPb4bfnfSa1iQ8E=");
-//        template.headForHeaders("https://api.after5app.com", headerMap);
-//        final Map<String, String> getParams = new HashMap<>();
-//        getParams.put("city", "Pune");
-//        getParams.put("country", "India");
-//        getParams.put("cLat", "18.5204");
-//        getParams.put("cLong", "73.8567");
-//        getParams.put("uLat", "18.5431007");
-//        getParams.put("uLong", "73.9044848");
-//        ResponseEntity<A5Data> entity = template.getForEntity("https://testapi.after5app.com", A5Data.class, getParams);
-//        if (entity.getStatusCode() == HttpStatus.OK) {
-//            final A5Data data = entity.getBody();
-//            StringBuilder stringBuilder = new StringBuilder();
-//            for (Slots slot : data.items) {
-//                stringBuilder
-//                        .append(slot.slot)
-//                        .append("\n--------------\n");
-//                for (Event event : slot.data) {
-//                    stringBuilder.append(event.name).append("\n");
-//                }
-//                stringBuilder.append("\n\n");
-//            }
-//            return new ApiAiResponse(SOURCE, stringBuilder.toString());
-//        }
-//        throw new IOException("Request failed to server");
     }
 }
