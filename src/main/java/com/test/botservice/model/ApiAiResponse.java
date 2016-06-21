@@ -28,7 +28,7 @@ public class ApiAiResponse {
 
     public ApiAiResponse() {
         final ObjectMapper mapper = new ObjectMapper();
-        byte[] bytes = Main.json.getBytes();
+        byte[] bytes = "".getBytes();
         try {
             final A5Data data = mapper.readValue(bytes, A5Data.class);
             StringBuilder stringBuilder = new StringBuilder();
@@ -42,7 +42,7 @@ public class ApiAiResponse {
                 stringBuilder.append("\n\n");
             }
             displayText = speech = stringBuilder.toString();
-            source = "a5-events-after-5-test";
+            source = "anything-as-source";
         } catch (IOException e) {
             e.printStackTrace();
         }
